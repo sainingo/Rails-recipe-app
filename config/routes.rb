@@ -1,4 +1,4 @@
-Rails.application.routes.draw do
+Rails.application.routes.draw do  
   root 'home#Index'
   devise_for :users
  
@@ -6,4 +6,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :users 
+  resources :foods, only: [:new, :edit, :update, :show, :destory]
+  
 end
