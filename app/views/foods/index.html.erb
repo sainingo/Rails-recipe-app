@@ -1,28 +1,32 @@
-<section class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
-  <% end %>
-
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Foods</h1>
-    <%= link_to 'New food', new_user_food_path(:user_id), class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+<section class='p-6'>  
+  <h3>All Foods</h1>
+  <div class="border flex justify-content-end my-2">
+    <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+      <%= link_to 'Add new food', new_food_path %>
+    </button> 
   </div>
-
-<% if @foods.exists? %>
-    <table class='d-flex flex-column border border-1 w-100'>
-      <thead>
-        <tr class='d-flex p-3 justify-content-between align-items-center'>
-          <td>Food</td>
-          <td>Measurement unit</td>
-          <td>Unit price</td>
-          <td>Action</td>
-        </tr>  
-      </thead>
-    </table>
-<% else %>
-    <p>No Food Added yet</p>     
-<% end %>
-  <div id="foods" class="min-w-full">
-    <%# <%= render @foods %> 
-  </div>
+  <table class="border m-3 w-full">
+    <thead>
+        <tr>
+        <th scope="col">Food</th>
+        <th scope="col">Measurement Unit</th>
+        <th scope="col">Unit Price</th>
+        <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @foods.each do |food| %>
+        <tr>
+        <th scope="row"> <%= food.name %> </th>
+        <td> <%= food.measurement_unit %> </td>
+        <td>$<%= food.price %> </td>
+        <td> 
+          <% if can? :destroy, food %> 
+            <%= button_to "Delete", food_path(food.id ), :method => :delete, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %> 
+          <% end %>
+        </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </section>
