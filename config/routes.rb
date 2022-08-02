@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :recipes
   resources :users 
-  resources :foods, only: [:new, :edit, :update, :show, :destory]
+  # resources :foods, only: [:new, :edit, :update, :show, :destory]
+  
+  resources :foods, only: [:index, :new, :create, :destroy]
   
 end

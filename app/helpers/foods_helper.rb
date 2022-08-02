@@ -1,5 +1,3 @@
 module FoodsHelper
-    def new
-
-    end
+  def new; end
 end

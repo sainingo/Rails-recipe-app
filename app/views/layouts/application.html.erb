@@ -13,13 +13,14 @@
   </head>
 
   <body>
-    <%= render "home/header" %>
+    <%= render "shared/header" %>
 
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <div id="user_nav">
-    <%= render "home/footer" %>
+    <div class="border p-6">
+
+    <%= render "shared/footer" %>
     </div>
   </body>
 </html>
