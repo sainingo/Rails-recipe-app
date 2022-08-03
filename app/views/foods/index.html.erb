@@ -1,27 +1,27 @@
-<section class='p-6'>  
-  <h3>All Foods</h1>
-  <div class="border flex justify-content-end my-2">
-    <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'>
+<section class='p-8'>  
+  <h3 class="font-bold text-2xl">All Foods</h1>
+  <div class="my-4 text-right">
+    <button class='bg-blue-500 hover:bg-blue-700 text-white py-1 px-2 rounded'>
       <%= link_to 'Add new food', new_food_path %>
     </button> 
   </div>
-  <table class="border m-3 w-full">
-    <thead>
-        <tr>
-        <th scope="col">Food</th>
-        <th scope="col">Measurement Unit</th>
-        <th scope="col">Unit Price</th>
-        <th scope="col">Actions</th>
+  <table class="border w-full">
+    <thead class="border">
+        <tr class="border">
+        <th class="border" scope="col">Food</th>
+        <th class="border" scope="col">Measurement Unit</th>
+        <th class="border" scope="col">Unit Price</th>
+        <th class="border" scope="col">Actions</th>
         </tr>
     </thead>
-    <tbody>
+    <tbody class="border w-full">
       <% @foods.each do |food| %>
-        <tr>
-        <th scope="row"> <%= food.name %> </th>
-        <td> <%= food.measurement_unit %> </td>
-        <td>$<%= food.price %> </td>
-        <td>           
-            <%= button_to "Delete", food_path(food.id ), :method => :delete, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %> 
+        <tr class="border">
+        <th class="border text-center"> <%= food.name %> </th>
+        <td class="border text-center"> <%= food.measurement_unit %> </td>
+        <td class="border text-center">$<%= food.price %> </td>
+        <td class="border text-center">           
+            <%= button_to "Delete", food_path(food.id ), :method => :delete, class: "bg-blue-500 hover:bg-blue-700 text-white m-2 py-1 px-2 rounded" %> 
           
         </td>
         </tr>
