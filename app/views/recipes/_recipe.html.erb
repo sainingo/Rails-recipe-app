@@ -1,37 +1,14 @@
-<div id="<%= dom_id recipe %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Name:</strong>
-    <%= recipe.name %>
-  </p>
+<div id="<%= dom_id recipe %>" class="w-[70%] mx-auto border-gray-900 border-4 my-3 rounded-sm">
+     <div class="flex justify-between p-4">
+          <p class="my-2 text-2xl">
+        <%= recipe.name %>
+      </p>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Preparation time:</strong>
-    <%= recipe.preparation_time %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Cooking time:</strong>
-    <%= recipe.cooking_time %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Description:</strong>
-    <%= recipe.description %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Public:</strong>
-    <%= recipe.public %>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1">User:</strong>
-    <%= recipe.user_id %>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this recipe", recipe, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this recipe', edit_recipe_path(recipe), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
+      <p class="my-2">
+        <%= recipe.description %>
+      </p>
+     </div>
+      <div class="rounded-lg py-3 px-4 bg-blue-600 text-white inline-block font-medium cursor-pointer m-2 underline text-xl">
+      <%= button_to 'Destroy this recipe', method: :delete%>
+      </div>
 </div>
