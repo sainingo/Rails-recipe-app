@@ -4,7 +4,22 @@
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
     <% end %>
 
-    <%= render @recipe %>
+<div id="<%= dom_id @recipe %>">
+  <p class="my-5 text-center text-3xl font-bold">
+    <%= @recipe.name %>
+  </p>
+
+  <p class="my-5">
+    <strong class="font-bold mb-1">Preparation time:</strong>
+    <%= @recipe.preparation_time %>
+    <span class="float-right">Public</span>
+  </p>
+
+  <p class="my-5">
+    <strong class="font-medium mb-1">Cooking time:</strong>
+    <%= @recipe.cooking_time %>
+  </p>   
+  </div> 
 
     <%= link_to 'Edit this recipe', edit_recipe_path(@recipe), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
     <div class="inline-block ml-2">
