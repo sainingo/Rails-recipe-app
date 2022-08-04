@@ -1,4 +1,4 @@
-<div class="mx-auto md:w-2/3 w-full flex">
+<div class="mx-auto  w-[70%]">
   <div class="mx-auto">
     <% if notice.present? %>
       <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-lg inline-block" id="notice"><%= notice %></p>
@@ -18,13 +18,17 @@
   <p class="my-5">
     <strong class="font-medium mb-1">Cooking time:</strong>
     <%= @recipe.cooking_time %>
-  </p>   
+  </p>  
+  <p class="font-bold py-2">Steps go here...</p> 
   </div> 
 
-    <%= link_to 'Edit this recipe', edit_recipe_path(@recipe), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
-      <%= button_to 'Destroy this recipe', recipe_path(@recipe), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    <div class="flex justify-between p-2 text-xl">
+    <div class="border-gray-900 p-2 border-4 my-3 rounded-sm">
+          <%= button_to 'Genarate shopping list', class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
-    <%= link_to 'Back to recipes', recipes_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <div class="border-gray-900 p-2 border-4 my-3 rounded-sm">
+      <%= button_to 'Add ingredient', class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+    </div>
+    </div>
   </div>
 </div>
