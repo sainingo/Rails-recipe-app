@@ -24,7 +24,7 @@
 
     <div class="flex justify-between p-2 text-xl">
     <div class="border-gray-900 p-2 border-4 my-3 rounded-sm">
-          <%= button_to 'Genarate shopping list', class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
+          <%= link_to 'Generate shopping list', shoppings_path %>
     </div>
     <div class="border-gray-900 p-2 border-4 my-3 rounded-sm">
       <%= link_to 'Add ingredient', new_recipe_food_path%>
@@ -33,3 +33,5 @@
   </div>
   <%= render "shared/show_recipe", recipe: @recipe%>
 </div>
+
+
