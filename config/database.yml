@@ -95,6 +95,4 @@ production:
   <<: *default
   database: Rails_recipe_app_production
   username: postgres
-  # password: 2022
-  password: Nat@1408
-  port: 6001
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
