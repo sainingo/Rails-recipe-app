@@ -3,7 +3,7 @@
     <% @public_recipes.each do |public_recipe| %>
         <div class="flex justify-center align-center  border m-2">
             <% if public_recipe.public == "public" %>
-                <div class="flex flex-column justify-center w-full">
+                <div class="">
                     <h2><%= public_recipe.name %></h2>
                     <p><%= public_recipe.user.email %></p>
                 </div>
