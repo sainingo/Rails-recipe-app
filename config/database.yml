@@ -29,9 +29,9 @@ development:
   <<: *default
   database: Rails_recipe_app_development
   username: postgres
-  password: 2022
-  # password: Nat@1408
-  # port: 6001
+  # password: 2022
+  password: Nat@1408
+  port: 6001
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -67,9 +67,9 @@ test:
   <<: *default
   database: Rails_recipe_app_test
   username: postgres
-  password: 2022
-  # password: Nat@1408
-  # port: 6001
+  # password: 2022
+  password: Nat@1408
+  port: 6001
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -95,6 +95,6 @@ production:
   <<: *default
   database: Rails_recipe_app_production
   username: postgres
-  password: 2022
-  # password: Nat@1408
-  # port: 6001
+  # password: 2022
+  password: Nat@1408
+  port: 6001
