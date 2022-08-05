@@ -22,20 +22,25 @@
             </tr>
           </thead>
           <tbody>
-          
+           <% if recipe.foods.blank? %>
+             <h4 class="text-center">No foods available!</h4>
+           <% else %>
+
+            <% recipe.recipe_foods.each do |recipe_food| %>
             <tr class="border-b">
-              <td scope="row" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"></td>
+              <td scope="row" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= recipe_food.food.name %></td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                
+                <%= "#{recipe_food.quantity} #{recipe_food.food.measurement_unit}" %>
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-               
+               <%= "$ #{recipe_food.quantity * recipe_food.food.price}" %>
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                
               </td>
             </tr>
-         
+              <% end %>
+          <% end %>
           </tbody>
         </table>
       </div>
