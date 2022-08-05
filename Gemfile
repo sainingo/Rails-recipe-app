@@ -5,6 +5,7 @@ ruby '3.1.2'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'bootsnap', require: false
+gem 'cancancan'
 gem 'devise'
 gem 'ffi', github: 'ffi/ffi', submodules: true
 gem 'importmap-rails'
