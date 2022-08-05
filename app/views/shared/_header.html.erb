@@ -25,6 +25,7 @@
         <div class="ml-3 relative text-white">
            <% if user_signed_in? %> 
          <%= current_user.email %>
+           <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
     <% else %> 
         <%= link_to 'Register', new_user_registration_path %> or <%= link_to 'Sign in', new_user_session_path %> 
     <% end %> 
