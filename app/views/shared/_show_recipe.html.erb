@@ -1,10 +1,6 @@
-<h3 class="text-2xl text-center m-4 font-bold underline">All Foods</h1>
-  <div class="border flex p-2 w-[80%] mx-auto">
-    <button class='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded '>
-      <%= link_to 'Add new food', new_food_path %>
-    </button> 
-  </div>
-<div class="flex flex-col w-[80%] mx-auto">
+
+
+<div class="flex flex-col w-[80%] mx-auto mt-16">
   <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
     <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
       <div class="overflow-hidden">
@@ -26,20 +22,25 @@
             </tr>
           </thead>
           <tbody>
-             <% @foods.each do |food| %>
+           <% if recipe.foods.blank? %>
+             <h4 class="text-center">No foods available!</h4>
+           <% else %>
+
+            <% recipe.recipe_foods.each do |recipe_food| %>
             <tr class="border-b">
-              <td scope="row" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= food.name %></td>
+              <td scope="row" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= recipe_food.food.name %></td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                <%= food.measurement_unit %> 
+                <%= "#{recipe_food.quantity} #{recipe_food.food.measurement_unit}" %>
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                $<%= food.price %>
+               <%= "$ #{recipe_food.quantity * recipe_food.food.price}" %>
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-               <%= button_to "Delete", food_path(food.id ), :method => :delete, class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %> 
+               <button>Modify / Remove </button>
               </td>
             </tr>
               <% end %>
+          <% end %>
           </tbody>
         </table>
       </div>
