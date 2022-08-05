@@ -20,10 +20,10 @@ class RecipeFoodsController < ApplicationController
   # POST /recipe_foods or /recipe_foods.json
   def create
     @recipe_food = RecipeFood.new(recipe_food_params)
-
+    @recipe_food.recipe_id = params[:recipe_id]
     respond_to do |format|
       if @recipe_food.save
-        format.html { redirect_to recipe_food_url(@recipe_food), notice: 'Recipe food was successfully created.' }
+        format.html { redirect_to recipes_path(@recipe_food), notice: 'Recipe food was successfully created.' }
         format.json { render :show, status: :created, location: @recipe_food }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -64,6 +64,6 @@ class RecipeFoodsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def recipe_food_params
-    params.require(:recipe_food).permit(:quantity, :recipe_id, :food_id)
+    params.require(:recipe_food).permit(:quantity, :food_id)
   end
 end
