@@ -18,6 +18,9 @@
                 Measurement Unit
               </th>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                Quantity
+              </th>
+              <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                Unit Price
               </th>
               <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
@@ -31,6 +34,9 @@
               <td scope="row" class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><%= food.name %></td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                 <%= food.measurement_unit %> 
+              </td>
+              <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                <%= food.quantity %> 
               </td>
               <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                 $<%= food.price %>
