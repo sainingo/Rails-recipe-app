@@ -1,0 +1,35 @@
+
+<div id="<%= dom_id recipe %>" class="w-[70%] mx-auto border-gray-900 border-4 my-3 rounded-sm cursor-pointer">
+<%= link_to "", recipe, class: " w-[69%] p-16 flex justify-center absolute " %>
+     <div class="flex justify-between p-4">
+          <p class="my-2 text-2xl z-10">
+        <%= recipe.name %>
+      </p>
+      <p class="my-5">
+    <strong class="block font-medium mb-1">Preparation time:</strong>
+    <%= recipe.preparation_time %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Cooking time:</strong>
+    <%= recipe.cooking_time %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Description:</strong>
+    <%= recipe.description %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Public:</strong>
+    <%= recipe.public %>
+  </p>
+
+      <p class="my-2">
+        <%= recipe.description %>
+      </p>
+     </div>
+      <div class="rounded-lg py-2 px-4 bg-blue-600 text-white inline-block font-medium cursor-pointer m-2 underline text-xl">
+      <%= button_to 'REMOVE', method: :delete%>
+      </div>
+</div>
